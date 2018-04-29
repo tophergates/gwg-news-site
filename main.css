@@ -1,0 +1,672 @@
+/**
+ * GENERAL STYLES
+*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  min-width: 320px;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  color: #424242;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0; 
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+* RESPONSIVE TABLES
+*/
+
+@media screen and (max-width: 549px) {
+  table {
+    max-width: 100%;
+  }
+  
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tbody tr {
+    border: 1px solid #E0E0E0;
+    border-radius: 0.3rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  tbody tr:last-child {
+    margin-bottom: 0;
+  }
+  
+  td {
+    border-bottom: 1px solid #eceff1;
+    position: relative;
+    padding: 1rem 0 1rem 30%;
+  }
+  
+  td:before {
+    color: #78909C;
+    font-style: normal;
+    position: absolute;
+    left: 0.5rem;
+    content: attr(data-th);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  tbody tr:last-child {
+    margin-bottom: 0;
+  }
+  
+  tr td:nth-child(even), tr td:nth-child(5n) {
+    background-color: #eceff1;
+  }
+  
+  tr td:nth-child(4n) {
+    border-bottom: 1px solid transparent;
+  }
+  
+  tr td:nth-child(6n) {
+    background-color: inherit;
+  }
+}
+
+
+/**
+ * HEADER
+*/
+
+.header {
+  background: #fff;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.26);
+  min-height: 5.6rem;
+  position: relative;
+  transition: min-height 0.3s;
+  z-index: 99;
+}
+
+.header__inner {
+  width: 100%;
+}
+
+.header__logo {
+  height: 4.5rem;
+  margin: 0.25rem 0 0 0.5rem;
+  transition: all 0.3s ease;
+  vertical-align: top;
+}
+
+.header__title {
+  color: #212121;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 2.25rem;
+  margin: 1.5rem 0 0 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.header__menu {
+  display: inline-block;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.header__menu svg {
+  fill: #E0E0E0;
+  width: 3.2rem;
+}
+
+@media screen and (min-width: 375px) {
+  .header__logo {
+    height: 4.8rem;
+    margin-top: 0.15rem;
+    transition: all 0.3s ease;
+  }
+
+  .header__title {
+    font-size: 2.75rem;
+    margin: 1.15rem 0 0 0.5rem;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .header__title {
+    font-size: 3.5rem;
+    margin: 0.75rem 0 0 0.5rem;
+    transition: all 0.5s ease;
+  }
+}
+
+@media screen and (min-width: 549px) {
+  .header {
+    box-shadow: none;
+  }
+
+  .header__menu {
+    display: none;
+  }
+}
+
+/**
+ * NAVIGATION
+*/
+
+.nav {
+  background-color: #fff;
+  position: relative;
+  transition: margin-top 0.3s ease;
+  margin-top: -19.5rem;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav.open {
+  margin-top: 0;
+}
+
+.nav__item {
+  border-bottom: 1px solid #E0E0E0;
+  display: list-item;
+  text-align: left;
+  width: 100%;
+}
+
+.nav a {
+  color: #616161;
+  display: block;
+  padding: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav a:hover, .nav a:active {
+  background: #E0E0E0;
+  color: #212121;
+}
+
+@media screen and (min-width: 549px) {
+  .nav {
+    background: #78909C;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.26);
+    margin: 0.5rem auto 1rem auto;
+  }
+
+  .nav__inner {
+    position: relative;
+    width: 100%;
+  }
+
+  .nav__list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav__item {
+    border-bottom: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .nav a {
+    color: #eceff1;
+    padding: 1.5rem;
+  }
+
+  .nav a:hover, .nav a:active {
+    background: transparent;
+    color: #eceff1;
+    text-decoration: underline;
+  }
+}
+
+/**
+ * MAIN CONTENT
+*/
+main {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero, .top-news, .scores, .weather, .recent-news {
+  order: 10;
+}
+
+/**
+ * HERO NEWS STORY
+*/
+.hero {
+  background-image: url("./images/dog.jpg");
+  background-size: cover;
+  min-height: 30rem;
+  position: relative;
+  width: 100%;
+}
+
+.hero article {
+  box-sizing: border-box;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  color: #fff;
+  padding: 1em;
+}
+
+.hero .description p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+}
+
+@media screen and (min-width: 417px) and (max-width: 549px) {
+  .hero .description p {
+    white-space: pre-wrap;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 695px) and (max-width: 814px) {
+  .hero .description p {
+    white-space: pre-wrap;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 834px) {
+  .hero .description p {
+    white-space: pre-wrap;
+    width: auto;
+  }
+}
+
+/**
+ * TOP NEWS SECTION
+*/
+
+ .top-news {
+  border-bottom: 1px solid #E0E0E0;
+  padding: 1rem;
+  width: 100%;
+}
+
+.news__title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.news__more {
+  color: #333;
+  float: right;
+  font-size: 1.25rem;
+  font-weight: normal;
+  padding-top: 0.25rem;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.top-news__item {
+  border-bottom: 1px solid #E0E0E0;
+  line-height: 1.4;
+  padding: 1rem 0;
+}
+
+.top-news__item:before {
+  content: "» ";
+}
+
+.top-news__item:last-child {
+  border-bottom: none;
+}
+
+.top-news__item a {
+  color: #666;
+  padding: 1.5rem inherit;
+  text-decoration: none;
+}
+
+.top-news__item a:hover,
+.top-news__item a:active {
+  text-decoration: underline;
+}
+
+/**
+ * RECENT NEWS SECTION
+*/
+
+ .recent-news {
+  clear: both;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.snippet {
+  clear: both;
+  display: block;
+  position: relative;
+  margin: 2.5rem 0;
+}
+
+.snippet:first-child {
+  margin-top: 1.5rem;;
+}
+
+.snippet__thumbnail {
+  margin: 0 1rem 1rem 0;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 549px) {
+  .snippet__thumbnail {
+    float: left;
+    margin: 0.25rem 1rem 0.5rem 0;
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .snippet__thumbnail {
+    width: 18%;
+  }
+}
+
+.snippet__title {
+  font-weight: 500;
+  margin: 0;
+}
+
+.snippet__title a {
+  color: #666;
+  padding: 1.5rem inherit;
+  text-decoration: none;
+}
+
+.snippet__title a:hover,
+.snippet__title a:active {
+  text-decoration: underline;
+}
+
+.snippet p {
+  line-height: 1.4;
+  margin: 1.2rem 0;
+}
+
+/**
+ * SPORTS SCORES
+*/
+
+ .scores {
+  flex-grow: 1;
+  padding: 1rem;
+  width: 100%;
+}
+
+.sports__title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sports__more {
+  color: #333;
+  float: right;
+  font-size: 1.25rem;
+  font-weight: normal;
+  padding-top: 0.25rem;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+td.winner {
+  font-weight: bold;
+}
+
+td.winner:after {
+  content: '*';
+  font-weight: bold;
+}
+
+@media screen and (min-width: 550px) {
+  .scores__table {
+    border-collapse: collapse;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .scores__table th,
+  .scores__table td {
+    padding: 1.5rem; 
+  }
+
+  .scores__table th {
+    background-color: #78909C;
+    color: #fff;
+    font-weight: 300;
+  }
+
+  .scores__table tr:nth-child(odd) td {
+    background-color: #fff;
+  }
+
+  .scores__table tr:nth-child(even) td {
+    background-color: #eceff1;
+  }
+
+  .scores__table td.winner {
+    font-weight: bold;
+  }
+
+  .scores__table td:nth-child(3) {
+    text-align: right;
+  }
+
+  .scores__table td:nth-child(2),
+  .scores__table td:nth-child(5) {
+    text-align: center;
+  }
+}
+
+/**
+ * WEATHER SECTION
+*/
+
+.weather {
+  background: #ffe;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 815px) {
+  .weather {
+    background: inherit;
+  }
+}
+
+.weather__location {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 300;
+}
+
+.weather__desc {
+  display: block;
+  font-size: 1.75rem;
+}
+
+.weather__today {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.weather__today__image {
+  order: 1;
+  max-width: 50%;
+}
+
+.weather__today__temp {
+  font-size: 3rem;
+}
+
+.weather__today__deg {
+  font-size: 2rem;
+}
+
+.weather__next__item {
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+}
+
+.weather__next__item span {
+  display: block;
+}
+
+.weather__next__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 550px) {
+  .hero {
+    order: 0;
+    width: 60%;
+  }
+  .weather {
+    border-bottom: 1px solid #E0E0E0;
+    order: 1;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 815px) {
+  .hero {
+    width: 50%;
+  }
+  .top-news {
+    max-height: 300px;
+    order: 1;
+    padding: 1rem 1.5rem;
+    width: 50%;
+  }
+  .scores {
+    order: 3;
+    margin-top: 2rem;
+    width: 70%;
+  }
+  .weather {
+    border-bottom: 0;
+    order: 2;
+    margin-top: 2rem;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  main, .header__inner, .nav__inner, .content {
+    margin: 0 auto;
+    width: 850px;
+  }
+}
+
+/**
+ * FOOTER
+*/
+
+footer {
+  background: #eee;
+  border-top: 1px solid #E0E0E0;
+  padding: 1rem;
+  width: 100%;
+}
+
+footer ul {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+footer a {
+  display: inline-block;
+  color: #333;
+  padding: 1.5rem;
+  text-decoration: none;
+}
+
+.to-top {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.to-top.show {
+  background: rgba(210, 210, 210, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 100%;
+  bottom: 1rem;
+  cursor: pointer;
+  display: block;
+  height: 48px;
+  opacity: 1;
+  position: fixed;
+  right: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 48px;
+}
+
+@media screen and (min-width: 850px) {
+  .to-top.show {
+    opacity: 0;
+  }
+}
+
+.to-top::after {
+  content: '^';
+  font-size: 5.5rem;
+}
